@@ -28,6 +28,10 @@ namespace API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<DataContext>();
+            services.AddCors();
+            //services.AddCors(c=>
+            //c.AddPolicy("AllowOrigin",options=>options.AllowAnyOrigin().AllowAnyMethod()
+            //.AllowAnyHeader()));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -48,6 +52,7 @@ namespace API
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseCors(x=>x.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 
             app.UseAuthorization();
 
