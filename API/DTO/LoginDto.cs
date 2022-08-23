@@ -2,15 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
+
 namespace API.DTO
 {
-    public class RegisterDto
+    public class LoginDto
     {
-        [Required]
         public string Username { get; set; }
-        
-        [Required]
-        public string password { get; set; }
+        public string Password { get; set; }
     }
 }
