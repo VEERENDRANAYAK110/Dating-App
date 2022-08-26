@@ -33,7 +33,18 @@ namespace API.Controllers
             {
                 Username=registerDto.Username.ToLower(),
                 PasswordHash=hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.password)),
-                PasswordSalt=hmac.Key
+                PasswordSalt=hmac.Key,
+                Gender= registerDto.Gender,
+                DateOfBirth=registerDto.DateOfBirth,
+                KnownAs=registerDto.KnownAs,
+                Created=registerDto.Created,
+                LastActive=registerDto.LastActive,
+                Introduction=registerDto.Introduction,
+                LookingFor=registerDto.LookingFor,
+                Interests=registerDto.Interests,
+                City=registerDto.City,
+                Country=registerDto.Country,
+                Photos=registerDto.Photos
             };
             _context.Users.Add(user);
 
